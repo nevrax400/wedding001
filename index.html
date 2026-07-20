@@ -1,383 +1,594 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Давид & Вика | Свадьба</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+<title>
+Давид ❤️ Вика | 21 августа 2026
+</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
-
 <body>
 
+<!-- ЛЕПЕСТКИ -->
 
-<div class="envelope" id="envelope">
+<div id="petals"></div>
 
-<div class="paper">
+<!-- КОНВЕРТ -->
+
+<div id="envelope">
+
+<div class="letter">
 
 <div class="seal">
-❤️
+
+❤
+
 </div>
 
 <h2>
-Приглашение
+
+Свадебное приглашение
+
 </h2>
 
 <p>
+
 Давид & Вика
+
 </p>
 
-<button onclick="openEnvelope()">
+<button id="openBtn">
+
 Открыть
+
 </button>
 
 </div>
 
 </div>
 
+<!-- МУЗЫКА -->
 
+<button id="musicBtn">
 
-<button class="music" onclick="playMusic()">
 🎵
+
 </button>
 
+<audio
+id="audio"
+loop>
 
-<audio id="audio" loop>
-<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_8c9f1f9c9b.mp3">
+<source
+src="music.mp3"
+type="audio/mpeg">
+
 </audio>
 
-
+<!-- ПЕРВЫЙ ЭКРАН -->
 
 <header class="hero">
 
-<div>
+<div class="overlay"></div>
 
-<p>
-Свадебное приглашение
+<div class="heroContent">
+
+<p class="subtitle">
+
+21 августа 2026
+
 </p>
 
-
 <h1>
-Давид<br>
-&
-<br>Вика
+
+Давид
+
+<span>&</span>
+
+Вика
+
 </h1>
 
+<div class="goldLine"></div>
 
-<h3>
-21 августа 2026
-</h3>
+<p class="heroText">
 
+С огромной радостью
+приглашаем вас разделить
+самый счастливый день
+в нашей жизни.
+
+</p>
+
+<a
+href="#invite"
+class="mainButton">
+
+Посмотреть приглашение
+
+</a>
 
 </div>
 
 </header>
 
-
-
-
-<section id="invite">
-
+<section
+id="invite">
 
 <h2>
+
 Дорогие!
+
 </h2>
 
+<div class="divider"></div>
 
-<p>
-С особой радостью и волнением приглашаем вас разделить самый важный день в нашей жизни — день, с которого начинается наша семья.
+<p class="text">
+
+С особой радостью и волнением
+приглашаем вас разделить
+самый важный день
+в нашей жизни —
+день, с которого
+начинается наша семья.
+
 </p>
-
-
-
 
 <div class="timer">
 
+<h3>
 
-<h2>
 До свадьбы осталось
-</h2>
 
+</h3>
 
-<div class="numbers">
-
-
-<div>
-<b id="days">0</b>
-<span>дней</span>
-</div>
-
+<div class="timerGrid">
 
 <div>
-<b id="hours">0</b>
-<span>часов</span>
-</div>
 
+<span id="days">
+
+000
+
+</span>
+
+<small>
+
+Дней
+
+</small>
+
+</div>
 
 <div>
-<b id="minutes">0</b>
-<span>минут</span>
-</div>
 
+<span id="hours">
+
+00
+
+</span>
+
+<small>
+
+Часов
+
+</small>
+
+</div>
 
 <div>
-<b id="seconds">0</b>
-<span>секунд</span>
+
+<span id="minutes">
+
+00
+
+</span>
+
+<small>
+
+Минут
+
+</small>
+
 </div>
 
+<div>
+
+<span id="seconds">
+
+00
+
+</span>
+
+<small>
+
+Секунд
+
+</small>
 
 </div>
 
-
 </div>
 
-
+</div>
 
 </section>
+<!-- ===========================
+МЕСТО ПРОВЕДЕНИЯ
+============================ -->
 
+<section id="place">
 
-
-
-
-<section>
-
+<div class="title">
 
 <h2>
-Когда
+
+Когда и где
+
 </h2>
 
+<div class="divider"></div>
+
+</div>
+
+<div class="infoGrid">
+
+<div class="card">
+
+<div class="emoji">
+🗓
+</div>
+
+<h3>
+
+Дата
+
+</h3>
 
 <p>
-21 августа 2026<br>
+
+21 августа 2026
+
+</p>
+
+<p>
+
 16:30
+
 </p>
 
+</div>
 
-<h2>
-Где
-</h2>
+<div class="card">
 
+<div class="emoji">
+📍
+</div>
+
+<h3>
+
+Место
+
+</h3>
 
 <p>
-г. Красноярск<br>
-Базайская улица, 234А
+
+г. Красноярск
+
 </p>
 
+<p>
 
-<a href="https://yandex.ru/maps/" target="_blank">
-📍 Построить маршрут
+ул. Базайская, 234А
+
+</p>
+
+<a
+class="routeButton"
+target="_blank"
+href="https://yandex.ru/maps/?text=Красноярск%20Базайская%20234А">
+
+Построить маршрут
+
 </a>
 
+</div>
+
+</div>
 
 </section>
 
+<!-- ===========================
+РАСПИСАНИЕ
+============================ -->
 
-
-
-
-<section>
-
+<section id="timeline">
 
 <h2>
+
+План дня
+
+</h2>
+
+<div class="divider"></div>
+
+<div class="timeline">
+
+<div class="timelineItem">
+
+<div class="time">
+
+16:30
+
+</div>
+
+<div class="event">
+
+💍
+
+Торжественная церемония
+
+</div>
+
+</div>
+
+<div class="timelineItem">
+
+<div class="time">
+
+17:30
+
+</div>
+
+<div class="event">
+
+🥂
+
+Праздничный банкет
+
+</div>
+
+</div>
+
+<div class="timelineItem">
+
+<div class="time">
+
+22:00
+
+</div>
+
+<div class="event">
+
+🎂
+
+Торт и танцы
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+ДРЕСС-КОД
+============================ -->
+
+<section id="dress">
+
+<h2>
+
 Дресс-код
+
 </h2>
 
+<div class="divider"></div>
 
 <p>
-Нежно цитрусовые оттенки,
-пыльно розовые,
-небесно голубой атлас,
-коралловый.
+
+Мы будем очень благодарны,
+если вы поддержите
+единый стиль праздника.
+
 </p>
 
+<div class="palette">
+
+<div class="color">
+
+<div class="circle citrus"></div>
+
+<span>
+
+Нежный цитрус
+
+</span>
+
+</div>
+
+<div class="color">
+
+<div class="circle rose"></div>
+
+<span>
+
+Пыльная роза
+
+</span>
+
+</div>
+
+<div class="color">
+
+<div class="circle sky"></div>
+
+<span>
+
+Небесный
+
+</span>
+
+</div>
+
+<div class="color">
+
+<div class="circle coral"></div>
+
+<span>
+
+Коралл
+
+</span>
+
+</div>
+
+</div>
 
 </section>
 
+<!-- ===========================
+ПОДАРКИ
+============================ -->
 
+<section id="gift">
 
+<div class="giftCard">
 
+<div class="giftIcon">
 
-<section>
+🎁
 
+</div>
 
 <h2>
+
 Подарки
+
 </h2>
 
-
 <p>
-Ваше присутствие — уже огромный подарок для нас.
-Будьте в этом свободны!
+
+Ваше присутствие —
+уже огромный подарок
+для нас.
+
 </p>
 
-
 <p>
-Ценным вкладом в нашу семью будет подарок в конверте.
+
+Если захотите поздравить нас,
+самым ценным вкладом
+в нашу семью станет
+подарок в конверте.
+
 </p>
 
+</div>
 
 </section>
+<!-- ===========================
+ПОДТВЕРЖДЕНИЕ
+============================ -->
 
-
-
-
-<section>
-
+<section id="rsvp">
 
 <h2>
-Подтвердите присутствие ❤️
+
+Мы будем счастливы
+видеть вас ❤️
+
 </h2>
 
+<div class="divider"></div>
 
-<a href="https://t.me/A400CY">
-Написать в Telegram
+<p>
+
+Пожалуйста,
+сообщите нам,
+сможете ли вы
+присутствовать.
+
+</p>
+
+<a
+href="https://t.me/A400CY"
+target="_blank"
+class="telegramButton">
+
+💬 Подтвердить участие
+
 </a>
 
-
 </section>
 
-
-
+<!-- ===========================
+ФУТЕР
+============================ -->
 
 <footer>
 
+<div class="flowers">
+
+🌸 ✨ 🌸
+
+</div>
+
 <h2>
-С любовью
+
+С любовью,
+
 </h2>
 
 <h1>
-Давид & Вика
+
+Давид
+
+<span>&</span>
+
+Вика
+
 </h1>
+
+<p>
+
+До скорой встречи!
+
+</p>
+
+<div class="footerDate">
+
+21 августа 2026
+
+</div>
 
 </footer>
 
+<!-- ПОДКЛЮЧЕНИЕ JS -->
 
-
-
-
-<script>
-
-
-
-// ТАЙМЕР
-
-function timer(){
-
-
-let wedding =
-new Date("2026-08-21T16:30:00").getTime();
-
-
-let now =
-new Date().getTime();
-
-
-let diff =
-wedding-now;
-
-
-
-let days =
-Math.floor(
-diff/(1000*60*60*24)
-);
-
-
-
-let hours =
-Math.floor(
-(diff%(1000*60*60*24))
-/
-(1000*60*60)
-);
-
-
-
-let minutes =
-Math.floor(
-(diff%(1000*60*60))
-/
-(1000*60)
-);
-
-
-
-let seconds =
-Math.floor(
-(diff%(1000*60))
-/
-1000
-);
-
-
-
-document.getElementById("days").innerHTML=days;
-
-document.getElementById("hours").innerHTML=hours;
-
-document.getElementById("minutes").innerHTML=minutes;
-
-document.getElementById("seconds").innerHTML=seconds;
-
-
-}
-
-
-
-setInterval(timer,1000);
-
-timer();
-
-
-
-
-
-// КОНВЕРТ
-
-
-function openEnvelope(){
-
-document
-.getElementById("envelope")
-.style.display="none";
-
-}
-
-
-
-
-
-// МУЗЫКА
-
-
-function playMusic(){
-
-let audio=document.getElementById("audio");
-
-
-if(audio.paused){
-
-audio.play();
-
-}
-
-else{
-
-audio.pause();
-
-}
-
-
-}
-
-
-</script>
-
-
+<script src="script.js"></script>
 
 </body>
+
 </html>
