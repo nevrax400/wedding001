@@ -1,16 +1,85 @@
-function scrollInvite(){
+// =====================
+// ТАЙМЕР СВАДЬБЫ
+// =====================
 
-document
-.getElementById("invite")
-.scrollIntoView({
 
-behavior:"smooth"
+function updateTimer(){
 
-});
+
+const weddingDate = new Date(
+"2026-08-21T16:30:00"
+).getTime();
+
+
+const now = new Date().getTime();
+
+
+const difference = weddingDate - now;
+
+
+
+if(difference <= 0){
+
+document.querySelector(".numbers").innerHTML =
+"<h2>Сегодня наш день ❤️</h2>";
+
+return;
 
 }
 
 
+
+const days = Math.floor(
+difference / (1000 * 60 * 60 * 24)
+);
+
+
+
+const hours = Math.floor(
+(difference % (1000 * 60 * 60 * 24))
+/ (1000 * 60 * 60)
+);
+
+
+
+const minutes = Math.floor(
+(difference % (1000 * 60 * 60))
+/ (1000 * 60)
+);
+
+
+
+const seconds = Math.floor(
+(difference % (1000 * 60))
+/ 1000
+);
+
+
+
+document.getElementById("days").innerHTML = days;
+
+document.getElementById("hours").innerHTML = hours;
+
+document.getElementById("minutes").innerHTML = minutes;
+
+document.getElementById("seconds").innerHTML = seconds;
+
+
+}
+
+
+
+updateTimer();
+
+setInterval(updateTimer,1000);
+
+
+
+
+
+// =====================
+// МУЗЫКА
+// =====================
 
 
 function playMusic(){
@@ -30,158 +99,25 @@ audio.pause();
 
 }
 
-
 }
 
 
 
 
-let wedding = new Date(
-"August 21, 2026 16:30:00"
-).getTime();
 
+// =====================
+// ОТКРЫТИЕ КОНВЕРТА
+// =====================
 
 
-function timer(){
+function openEnvelope(){
 
+let envelope=document.getElementById("envelope");
 
-let now=new Date().getTime();
 
+if(envelope){
 
-let distance=wedding-now;
-
-
-
-if(distance<0){
-
-document.querySelector(".numbers").innerHTML=
-"Сегодня наш день ❤️";
-
-return;
-
-}
-
-
-
-let days=Math.floor(
-distance/(1000*60*60*24)
-);
-
-
-
-let hours=Math.floor(
-(distance%(1000*60*60*24))
-/(1000*60*60)
-);
-
-
-
-let minutes=Math.floor(
-(distance%(1000*60*60))
-/(1000*60)
-);
-
-
-
-let seconds=Math.floor(
-(distance%(1000*60))
-/1000
-);
-
-
-
-document.getElementById("days").innerHTML=days;
-
-document.getElementById("hours").innerHTML=hours;
-
-document.getElementById("minutes").innerHTML=minutes;
-
-document.getElementById("seconds").innerHTML=seconds;
-
-
-
-}
-
-
-
-setInterval(timer,1000);
-
-timer();
-/* КОНВЕРТ */
-
-.envelope{
-
-position:fixed;
-
-inset:0;
-
-background:#fff8f5;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:999;
-
-transition:1s;
-
-}
-
-
-.paper{
-
-background:white;
-
-padding:50px 40px;
-
-border-radius:30px;
-
-box-shadow:
-0 20px 60px rgba(0,0,0,.15);
-
-animation:float 3s infinite;
-
-}
-
-
-
-.seal{
-
-font-size:50px;
-
-margin-bottom:20px;
-
-}
-
-
-
-.envelope.hide{
-
-opacity:0;
-
-pointer-events:none;
-
-transform:scale(1.2);
-
-}
-
-
-
-
-@keyframes float{
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
-
-50%{
-
-transform:translateY(-15px);
+envelope.classList.add("hide");
 
 }
 
@@ -189,66 +125,41 @@ transform:translateY(-15px);
 
 
 
-/* ЛЕПЕСТКИ */
 
 
-.petal{
-
-position:fixed;
-
-top:-20px;
-
-width:15px;
-
-height:15px;
-
-background:#e8b7b7;
-
-border-radius:100% 0 100% 0;
-
-animation:fall linear infinite;
-
-z-index:2;
-
-}
+// =====================
+// ЛЕПЕСТКИ
+// =====================
 
 
+function createPetal(){
 
-@keyframes fall{
+
+let petal=document.createElement("div");
 
 
-to{
+petal.className="petal";
 
-transform:
-translateY(110vh)
-rotate(360deg);
 
-}
+petal.style.left=Math.random()*100+"vw";
+
+
+petal.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+
+document.body.appendChild(petal);
+
+
+
+setTimeout(()=>{
+
+petal.remove();
+
+},10000);
 
 
 }
 
 
-
-/* ПОЯВЛЕНИЕ БЛОКОВ */
-
-
-section{
-
-opacity:0;
-
-transform:translateY(40px);
-
-transition:1s;
-
-}
-
-
-
-section.show{
-
-opacity:1;
-
-transform:none;
-
-}
+setInterval(createPetal,700);
