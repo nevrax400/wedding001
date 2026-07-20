@@ -322,3 +322,96 @@ font-size:60px;
 }
 
 }
+// Открытие конверта
+
+function openEnvelope(){
+
+document
+.getElementById("envelope")
+.classList.add("hide");
+
+}
+
+
+
+// лепестки
+
+function createPetal(){
+
+
+let petal=document.createElement("div");
+
+petal.className="petal";
+
+
+petal.style.left=
+Math.random()*100+"vw";
+
+
+petal.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+
+petal.style.opacity=
+Math.random();
+
+
+
+document.body.appendChild(petal);
+
+
+
+setTimeout(()=>{
+
+petal.remove();
+
+},10000);
+
+
+
+}
+
+
+setInterval(createPetal,400);
+
+
+
+
+
+// появление секций
+
+let sections=document.querySelectorAll("section");
+
+
+function reveal(){
+
+
+sections.forEach(section=>{
+
+
+let top=
+section.getBoundingClientRect().top;
+
+
+if(top<
+window.innerHeight-100){
+
+section.classList.add("show");
+
+}
+
+
+});
+
+
+}
+
+
+
+window.addEventListener(
+"scroll",
+reveal
+);
+
+
+reveal();
